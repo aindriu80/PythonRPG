@@ -17,7 +17,7 @@ class Person:
           self.maxhp = mp
           self.mp = mp
           self.atkl = atk - 10
-          self.atkh = atk +10
+          self.atkh = atk + 10
           self.df = df
           self.magic = magic
           self.actions = ["Attack", "Magic"]
@@ -28,7 +28,7 @@ class Person:
       def generate_spell_damage(self, i):
           mgl = self.magic[i]["dmg"] - 5
           mgh = self.magic[i]["dmg"] + 5
-          return random.randrange(mgl,mgh)
+          return random.randrange(mgl, mgh)
 
       def take_damage(self,dmg):
           self.hp -=dmg
@@ -51,25 +51,25 @@ class Person:
       def reduce_mp(self, cost):
           self.mp -= cost
 
-      def get_spell_name(selfself,i):
+      def get_spell_name(self,i):
           return self.magic[i]["name"]
 
       def get_spell_mp_cost(self,i):
-          return self.magic[i][cost]
+          return self.magic[i]["cost"]
 
       def choose_action(self):
           i = 1
-          print("Actions")
+          print(bcolors.OKBLUE + bcolors.BOLD + "Action" + bcolors.ENDC)
           for item in self.actions:
               print(str(i)+ ":", item)
               i += 1
 
       def choose_magic(self):
-          i =1
-          print("Magic")
+          i = 1
+          print(bcolors.OKBLUE + bcolors.BOLD + "Magic" + bcolors.ENDC)
           for spell in self.magic:
-              print(str(i) + ":", spell["name"], "(cost:", str(spell["mp"]) + ")")
-              i +=1
+              print(str(i) + ":", spell["name"], "(cost:", str(spell["cost"]) + ")")
+              i += 1
 
 
 
