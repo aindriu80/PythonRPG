@@ -64,6 +64,19 @@ class Person:
             print("        " + str(i) + ".", item)
             i += 1
 
+    def choose_target(self, enemies):
+        i = 1
+
+        print("\n" + bcolors.FAIL + bcolors.BOLD + "    Target:" + bcolors.ENDC)
+        for enemy in enemies:
+            print("     " + str(i) + ".", enemy.name)
+            i += 1
+        choice = int(input("Choose target:")) -1
+        return choice
+
+
+
+
     def choose_magic(self):
         i = 1
 
